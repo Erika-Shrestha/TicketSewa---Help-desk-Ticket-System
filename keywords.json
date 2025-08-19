@@ -1,0 +1,6 @@
+{
+    "Critical": ["server down", "data loss", "security breach"],
+    "High": ["unable to login", "payment failed", "system error"],
+    "Medium": ["slow performance", "minor bug", "typo"],
+    "Low": ["feature request", "general inquiry", "cosmetic issue"]
+}
