@@ -109,8 +109,7 @@ class TicketSewaUI:
         table.add_row("[bold yellow]a)[/bold yellow] Change Ticket Status")
         table.add_row("[bold yellow]b)[/bold yellow] Change Ticket Priority")
         table.add_row("[bold yellow]c)[/bold yellow] Check Dependencies")
-        table.add_row("[bold yellow]d)[/bold yellow] Process Priority Tickets")
-        table.add_row("[bold yellow]e)[/bold yellow] Go Back")
+        table.add_row("[bold yellow]d)[/bold yellow] Go Back")
 
         panel = Panel(
             table,

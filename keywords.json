@@ -1,5 +1,5 @@
 {
     "High": ["unable to login", "payment failed", "network issue", "system error", "server down", "data loss", "security breach"],
-    "Medium": ["slow performance", "minor bug", "typo"],
+    "Medium": ["slow performance", "minor bug", "typo", "email login"],
     "Low": ["feature request", "general inquiry", "cosmetic issue"]
 }

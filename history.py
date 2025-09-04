@@ -1,11 +1,13 @@
 from datetime import datetime
+from rich.console import Console
+
+console = Console()
 
 class HistoryNode:
-    def __init__(self, ticket_id, title, status, priority, timestamp=None):
-        self.ticket_id = ticket_id
+    def __init__(self, ticket_id, title,  action_type="No Action", timestamp=None):
+        self.ticket_id = str(ticket_id)
         self.title = title
-        self.status = status
-        self.priority = priority
+        self.action_type = action_type 
         self.timestamp = timestamp or datetime.now()
         self.next = None
 
@@ -14,9 +16,20 @@ class TicketHistory:
         self.head = None
         self.tail = None
 
+    def add_action(self, ticket_id, title, action_type, timestamp=None):
+        timestamp = timestamp or datetime.now()
+        new_node = HistoryNode(ticket_id, title, action_type, timestamp)
+        if not self.head:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+    
     def add_record(self, ticket):
-        node = HistoryNode(ticket.ticket_id, ticket.title, ticket.status, ticket.priority)
-        if self.head is None:
+        node = HistoryNode(ticket.ticket_id, ticket.title)
+        if not self.head:
             self.head = node
             self.tail = node
         else:
@@ -27,5 +40,5 @@ class TicketHistory:
         current = self.head
         while current:
             if ticket_id is None or current.ticket_id == ticket_id:
-                print(f"[{current.timestamp}] Ticket ID {current.ticket_id} | Title: {current.title} | Status: {current.status} | Priority: {current.priority}")
+                console.print(f"[dim cyan][{current.timestamp}] [/dim cyan][bold yellow]Ticket ID {current.ticket_id} [/bold yellow][bold green]| {current.title}: [/bold green][magenta]{current.action_type}[/magenta]")
             current = current.next

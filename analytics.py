@@ -10,6 +10,7 @@ class TicketAnalytics:
         # Initialize counts
         total = len(self.tickets_list)
         open_tickets = 0
+        resolved_tickets = 0
         closed_tickets = 0
         low = 0
         medium = 0
@@ -17,10 +18,12 @@ class TicketAnalytics:
 
         for ticket in self.tickets_list:
             # Count by status
-            if ticket.status == "Open":
+            if ticket.status in ["Open", "In-Progress"]:
                 open_tickets += 1
-            else:
+            elif ticket.status == "Closed":
                 closed_tickets += 1
+            elif ticket.status == "Resolved":
+                resolved_tickets += 1
 
             if ticket.priority == "Low":
                 low += 1
@@ -32,6 +35,7 @@ class TicketAnalytics:
         stats = [
             ["Total Tickets", total],
             ["Open Tickets", open_tickets],
+            ["Resolved Tickets", resolved_tickets],
             ["Closed Tickets", closed_tickets],
             ["Low Priority", low],
             ["Medium Priority", medium],
@@ -48,7 +52,7 @@ class TicketAnalytics:
 
             if key_metric == "Total Tickets":
                 count_color = "yellow"
-            elif "Open" in key_metric or "Low" in key_metric:
+            elif "Open" in key_metric or "Low" in key_metric or "Resolved" in key_metric:
                 count_color = "green"
             else:
                 count_color = "red"
