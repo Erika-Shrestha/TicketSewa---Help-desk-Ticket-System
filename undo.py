@@ -1,3 +1,4 @@
+"""uses stack to undo the last action of ticket"""
 class UndoTicket:
     def __init__(self):
         self.stack = []

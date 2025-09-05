@@ -2,6 +2,7 @@ from rich.console import Console
 
 console = Console()
 
+"""all the validations for the user prompts"""
 class InputValidator:
 
     def get_int_input(prompt):

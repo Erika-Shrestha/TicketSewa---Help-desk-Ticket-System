@@ -6,6 +6,7 @@ class TicketAnalytics:
         self.tickets_list = tickets_list
         self.console = Console()
 
+    """initializes the ticket values"""
     def ticket_summary(self):
         # Initialize counts
         total = len(self.tickets_list)
@@ -16,6 +17,7 @@ class TicketAnalytics:
         medium = 0
         high = 0
 
+        """increases each count according to the """
         for ticket in self.tickets_list:
             # Count by status
             if ticket.status in ["Open", "In-Progress"]:
@@ -44,6 +46,7 @@ class TicketAnalytics:
 
         return stats
 
+    """modified verson of stats"""
     def display_dashboard(self):
         stats = self.ticket_summary()
 

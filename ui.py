@@ -45,14 +45,14 @@ class TicketSewaUI:
             Padding(
                 Panel(
                     Align.left("[bold black]Choose the following options :-[/bold black]\n\n"
-                                "[bold yellow][1][/bold yellow] Create Tickets\n"
-                                "[bold yellow][2][/bold yellow] Process Tickets\n"
-                                "[bold yellow][3][/bold yellow] Delete Tickets\n"
-                                "[bold yellow][4][/bold yellow] View Tickets\n"
-                                "[bold yellow][5][/bold yellow] Check Ticket Histories\n"
-                                "[bold yellow][6][/bold yellow] Undo Ticket Changes\n"
-                                "[bold yellow][7][/bold yellow] View Analytics\n"
-                                "[bold yellow][8][/bold yellow] Exit"
+                                "[bold yellow][1][/bold yellow] [bold]Create Tickets[/bold]\n"
+                                "[bold yellow][2][/bold yellow] [bold]Process Tickets[/bold]\n"
+                                "[bold yellow][3][/bold yellow] [bold]Delete Tickets[/bold]\n"
+                                "[bold yellow][4][/bold yellow] [bold]View Tickets[/bold]\n"
+                                "[bold yellow][5][/bold yellow] [bold]Check Ticket Histories[/bold]\n"
+                                "[bold yellow][6][/bold yellow] [bold]Undo Ticket Changes[/bold]\n"
+                                "[bold yellow][7][/bold yellow] [bold]View Analytics[/bold]\n"
+                                "[bold yellow][8][/bold yellow] [bold]Exit[/bold]"
                             ),
                     box=box.MINIMAL,                   
                     style="black on green",           

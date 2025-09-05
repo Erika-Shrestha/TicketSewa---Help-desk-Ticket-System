@@ -7,6 +7,7 @@ with open("keywords.json", "r") as file:
 db = get_db()
 ticketSewa_collection = db["Tickets"]
 
+"""the ticket class with auto prioritization"""
 class Ticket:
     def __init__(self, title, description, status="Open", priority=None, created_by=None, assigned_to=None, dependencies=None, ticket_id = None, ):
         self.title = title
@@ -32,6 +33,7 @@ class Ticket:
                     return priority 
         return "Medium"
     
+    """converts to dict to store in database"""
     def to_dict(self):
         return {
             "title": self.title,
@@ -47,4 +49,3 @@ class Ticket:
     def save_to_db(self):
         result = ticketSewa_collection.insert_one(self.to_dict())
         self.ticket_id = str(result.inserted_id)
-        print(f"Ticket '{self.title}' stored in MongoDB.")
